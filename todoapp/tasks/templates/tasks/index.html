@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+</head>
+<body>
+    <h3>This is tasks app. You can create projects, subprojects and manage them all</h3>
+    {% if tasks %}
+        <p>These are all your tasks</p>
+        <ul>
+            {% for task in tasks %}
+                <li><a href="{% url 'tasks:detail' task.id %}">task.text</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No tasks yet. Add the first one</p>
+    {% endif %}
+</body>
+</html>
